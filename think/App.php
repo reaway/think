@@ -131,37 +131,6 @@ class App
     protected $initialized = false;
 
     /**
-     * 容器绑定标识
-     * @var array
-     */
-    protected $bind = [
-        'app'                     => App::class,
-        'cache'                   => Cache::class,
-        'config'                  => Config::class,
-        'console'                 => Console::class,
-        'cookie'                  => Cookie::class,
-        'db'                      => Db::class,
-        'env'                     => Env::class,
-        'event'                   => Event::class,
-        'http'                    => Http::class,
-        'lang'                    => Lang::class,
-        'log'                     => Log::class,
-        'middleware'              => Middleware::class,
-        'request'                 => Request::class,
-        'response'                => Response::class,
-        'route'                   => Route::class,
-        'session'                 => Session::class,
-        'validate'                => Validate::class,
-        'view'                    => View::class,
-        'filesystem'              => Filesystem::class,
-        'think\DbManager'         => Db::class,
-        'think\LogManager'        => Log::class,
-        'think\CacheManager'      => Cache::class,
-
-        // 接口依赖注入
-        'Psr\Log\LoggerInterface' => Log::class,
-    ];
-    /**
      * @var Container
      */
     private $container;
@@ -181,7 +150,7 @@ class App
         $this->container = $container;
 
         if (is_file($this->appPath . 'provider.php')) {
-            $this->bind(include $this->appPath . 'provider.php');
+            $this->container->bind(include $this->appPath . 'provider.php');
         }
 
         $this->container->instance('app', $this);
@@ -621,7 +590,7 @@ class App
      */
     protected function getDefaultRootPath(): string
     {
-        return dirname($this->thinkPath, 4) . DIRECTORY_SEPARATOR;
+        return dirname(__DIR__) . DIRECTORY_SEPARATOR;
     }
 
 }
