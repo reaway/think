@@ -14,7 +14,15 @@
   "require": {
     "php": ">=7.2.5",
     "reaway/think-container": "^1.0",
-    "reaway/think-http": "dev-main"
+    "reaway/think-env": "^1.0",
+    "reaway/think-config": "^1.0",
+    "reaway/think-event": "^1.0",
+    "reaway/think-lang": "^1.0",
+    "reaway/think-request": "^1.0",
+    "reaway/think-response": "^1.0",
+    "reaway/think-log": "dev-main",
+    "reaway/think-middleware": "dev-main",
+    "reaway/think-route": "dev-main"
   },
   "require-dev": {
     "symfony/var-dumper": "^6.0"

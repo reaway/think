@@ -12,15 +12,21 @@ declare (strict_types = 1);
 
 namespace think;
 
+use Think\Component\Container\Container;
+use Think\Component\Request\Request;
+use Think\Component\Response\Response;
 use think\event\HttpEnd;
 use think\event\HttpRun;
 use think\event\RouteLoaded;
 use think\exception\Handle;
 use Throwable;
 
+use Think\Component\Route\Route;
+
 /**
  * Web应用管理类
  * @package think
+ * @property Route       $route
  */
 class Http
 {
@@ -53,9 +59,22 @@ class Http
      */
     protected $isBind = false;
 
-    public function __construct(App $app)
+    /**
+     * @var Container
+     */
+    protected $container;
+
+
+    public function __construct(App $app, Container $container)
     {
         $this->app = $app;
+        $this->container = $container;
+
+        $this->event = $this->container->event;
+        $this->middleware = $this->container->middleware;
+        $this->config = $this->container->config;
+        $this->route = $this->container->route;
+        $this->log = $this->container->log;
 
         $this->routePath = $this->app->getRootPath() . 'route' . DIRECTORY_SEPARATOR;
     }
@@ -162,8 +181,8 @@ class Http
         $this->initialize();
 
         //自动创建request对象
-        $request = $request ?? $this->app->make('request', [], true);
-        $this->app->instance('request', $request);
+        $request = $request ?? $this->container->make('request', [], true);
+        $this->container->instance('request', $request);
 
         try {
             $response = $this->runWithRequest($request);
@@ -197,9 +216,9 @@ class Http
         $this->loadMiddleware();
 
         // 监听HttpRun
-        $this->app->event->trigger(HttpRun::class);
+        $this->event->trigger(HttpRun::class);
 
-        return $this->app->middleware->pipeline()
+        return $this->middleware->pipeline()
             ->send($request)
             ->then(function ($request) {
                 return $this->dispatchToRoute($request);
@@ -208,11 +227,11 @@ class Http
 
     protected function dispatchToRoute($request)
     {
-        $withRoute = $this->app->config->get('app.with_route', true) ? function () {
+        $withRoute = $this->config->get('app.with_route', true) ? function () {
             $this->loadRoutes();
         } : null;
 
-        return $this->app->route->dispatch($request, $withRoute);
+        return $this->route->dispatch($request, $withRoute);
     }
 
     /**
@@ -221,7 +240,7 @@ class Http
     protected function loadMiddleware(): void
     {
         if (is_file($this->app->getBasePath() . 'middleware.php')) {
-            $this->app->middleware->import(include $this->app->getBasePath() . 'middleware.php');
+            $this->middleware->import(include $this->app->getBasePath() . 'middleware.php');
         }
     }
 
@@ -242,7 +261,7 @@ class Http
             }
         }
 
-        $this->app->event->trigger(RouteLoaded::class);
+        $this->event->trigger(RouteLoaded::class);
     }
 
     /**
@@ -253,7 +272,7 @@ class Http
      */
     protected function reportException(Throwable $e)
     {
-        $this->app->make(Handle::class)->report($e);
+        $this->container->make(Handle::class)->report($e);
     }
 
     /**
@@ -265,7 +284,7 @@ class Http
      */
     protected function renderException($request, Throwable $e)
     {
-        return $this->app->make(Handle::class)->render($request, $e);
+        return $this->container->make(Handle::class)->render($request, $e);
     }
 
     /**
@@ -275,13 +294,13 @@ class Http
      */
     public function end(Response $response): void
     {
-        $this->app->event->trigger(HttpEnd::class, $response);
+        $this->event->trigger(HttpEnd::class, $response);
 
         //执行中间件
-        $this->app->middleware->end($response);
+        $this->middleware->end($response);
 
         // 写入日志
-        $this->app->log->save();
+        $this->log->save();
     }
 
 }

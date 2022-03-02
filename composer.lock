@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d554d0bafb8585c7ac0934f296da2d3",
+    "content-hash": "75f0796f31b1d580d682afa78e26968d",
     "packages": [
         {
             "name": "psr/container",
@@ -18,13 +18,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
                 "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.4.0"
@@ -61,24 +55,218 @@
             "time": "2021-11-05T16:50:12+00:00"
         },
         {
-            "name": "reaway/think-container",
-            "version": "v1.0.2",
+            "name": "psr/http-message",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/reaway/think-container.git",
-                "reference": "d92e69b7f0673a69d26f94d47d8facf59c96056e"
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reaway/think-container/zipball/d92e69b7f0673a69d26f94d47d8facf59c96056e",
-                "reference": "d92e69b7f0673a69d26f94d47d8facf59c96056e",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/master"
+            },
+            "time": "2016-08-06T14:39:51+00:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
+            },
+            "time": "2021-05-03T11:20:27+00:00"
+        },
+        {
+            "name": "psr/simple-cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/simple-cache.git",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\SimpleCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interfaces for simple caching",
+            "keywords": [
+                "cache",
+                "caching",
+                "psr",
+                "psr-16",
+                "simple-cache"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/simple-cache/tree/master"
+            },
+            "time": "2017-10-23T01:57:42+00:00"
+        },
+        {
+            "name": "reaway/think-config",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-config.git",
+                "reference": "00b2a6ff6502c7700acbfd8617030919ec257a5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-config/zipball/00b2a6ff6502c7700acbfd8617030919ec257a5f",
+                "reference": "00b2a6ff6502c7700acbfd8617030919ec257a5f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.2.0",
+                "reaway/think-facade": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Think\\Component\\Config\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think config",
+            "homepage": "https://github.com/reaway/think-config",
+            "support": {
+                "issues": "https://github.com/reaway/think-config/issues",
+                "source": "https://github.com/reaway/think-config/tree/v1.0.1"
+            },
+            "time": "2022-01-16T09:25:50+00:00"
+        },
+        {
+            "name": "reaway/think-container",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-container.git",
+                "reference": "0080550475d2c75bb1887609c1d22cffd3298332"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-container/zipball/0080550475d2c75bb1887609c1d22cffd3298332",
+                "reference": "0080550475d2c75bb1887609c1d22cffd3298332",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
@@ -108,40 +296,37 @@
             "homepage": "https://github.com/reaway/think-container",
             "support": {
                 "issues": "https://github.com/reaway/think-container/issues",
-                "source": "https://github.com/reaway/think-container/tree/v1.0.2"
+                "source": "https://github.com/reaway/think-container/tree/v1.0.3"
             },
-            "time": "2022-02-04T14:40:56+00:00"
+            "time": "2022-02-20T06:49:54+00:00"
         },
         {
-            "name": "reaway/think-http",
-            "version": "dev-main",
+            "name": "reaway/think-cookie",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/reaway/think-http.git",
-                "reference": "b1accb1f11447441c3a034d2380641742c86e4a7"
+                "url": "https://github.com/reaway/think-cookie.git",
+                "reference": "01d74d7efea41add854973d531e7542a6b01d8ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reaway/think-http/zipball/b1accb1f11447441c3a034d2380641742c86e4a7",
-                "reference": "b1accb1f11447441c3a034d2380641742c86e4a7",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/reaway/think-cookie/zipball/01d74d7efea41add854973d531e7542a6b01d8ed",
+                "reference": "01d74d7efea41add854973d531e7542a6b01d8ed",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.2.0",
-                "reaway/think-container": "^1.0",
-                "topthink/think-helper": "^3.1"
+                "reaway/think-config": "^1.0",
+                "reaway/think-facade": "^1.0",
+                "reaway/think-request": "^1.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
                 "psr-4": {
-                    "Think\\Component\\Http\\": "src/"
+                    "Think\\Component\\Cookie\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -154,13 +339,621 @@
                     "email": "reaway@foxmail.com"
                 }
             ],
-            "description": "think http",
-            "homepage": "https://github.com/reaway/think-http",
+            "description": "think cookie",
+            "homepage": "https://github.com/reaway/think-cookie",
             "support": {
-                "issues": "https://github.com/reaway/think-http/issues",
-                "source": "https://github.com/reaway/think-http/tree/main"
+                "issues": "https://github.com/reaway/think-cookie/issues",
+                "source": "https://github.com/reaway/think-cookie/tree/v1.0.1"
             },
-            "time": "2022-02-04T13:34:58+00:00"
+            "time": "2022-02-19T06:53:19+00:00"
+        },
+        {
+            "name": "reaway/think-env",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-env.git",
+                "reference": "835d15d7f68aa724819ab9b92f98f81d72c75f08"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-env/zipball/835d15d7f68aa724819ab9b92f98f81d72c75f08",
+                "reference": "835d15d7f68aa724819ab9b92f98f81d72c75f08",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0",
+                "reaway/think-facade": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Think\\Component\\Env\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think env",
+            "homepage": "https://github.com/reaway/think-env",
+            "support": {
+                "issues": "https://github.com/reaway/think-env/issues",
+                "source": "https://github.com/reaway/think-env/tree/v1.0.1"
+            },
+            "time": "2022-01-03T05:56:29+00:00"
+        },
+        {
+            "name": "reaway/think-event",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-event.git",
+                "reference": "88f66dfb069998d9a8bec4f45f8f96df56000bb4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-event/zipball/88f66dfb069998d9a8bec4f45f8f96df56000bb4",
+                "reference": "88f66dfb069998d9a8bec4f45f8f96df56000bb4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0",
+                "reaway/think-container": "^1.0",
+                "reaway/think-facade": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Think\\Component\\Event\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think event",
+            "homepage": "https://github.com/reaway/think-event",
+            "support": {
+                "issues": "https://github.com/reaway/think-event/issues",
+                "source": "https://github.com/reaway/think-event/tree/v1.0.0"
+            },
+            "time": "2022-01-03T05:38:22+00:00"
+        },
+        {
+            "name": "reaway/think-facade",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-facade.git",
+                "reference": "ef4c22710c6ec1f45af357297b052f7ce6b766bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-facade/zipball/ef4c22710c6ec1f45af357297b052f7ce6b766bc",
+                "reference": "ef4c22710c6ec1f45af357297b052f7ce6b766bc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0",
+                "reaway/think-container": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Think\\Component\\Facade\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think facade",
+            "homepage": "https://github.com/reaway/think-facade",
+            "support": {
+                "issues": "https://github.com/reaway/think-facade/issues",
+                "source": "https://github.com/reaway/think-facade/tree/v1.0.0"
+            },
+            "time": "2021-10-19T11:48:14+00:00"
+        },
+        {
+            "name": "reaway/think-file",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-file.git",
+                "reference": "e5e4577fd139ffefd8db3906ddddc9b4b4db02f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-file/zipball/e5e4577fd139ffefd8db3906ddddc9b4b4db02f5",
+                "reference": "e5e4577fd139ffefd8db3906ddddc9b4b4db02f5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "php": ">=7.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Think\\Component\\File\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think file",
+            "homepage": "https://github.com/reaway/think-file",
+            "support": {
+                "issues": "https://github.com/reaway/think-file/issues",
+                "source": "https://github.com/reaway/think-file/tree/v1.0.0"
+            },
+            "time": "2022-02-04T10:49:12+00:00"
+        },
+        {
+            "name": "reaway/think-lang",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-lang.git",
+                "reference": "0281941c59c0e9e3c08d8733a8466757fbdf39af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-lang/zipball/0281941c59c0e9e3c08d8733a8466757fbdf39af",
+                "reference": "0281941c59c0e9e3c08d8733a8466757fbdf39af",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.2.0",
+                "reaway/think-config": "^1.0",
+                "reaway/think-facade": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Think\\Component\\Lang\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think lang",
+            "homepage": "https://github.com/reaway/think-lang",
+            "support": {
+                "issues": "https://github.com/reaway/think-lang/issues",
+                "source": "https://github.com/reaway/think-lang/tree/v1.0.1"
+            },
+            "time": "2022-02-20T05:05:14+00:00"
+        },
+        {
+            "name": "reaway/think-log",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-log.git",
+                "reference": "ee6cf5e169eceef045fcd1a507e5bda62ec6c22c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-log/zipball/ee6cf5e169eceef045fcd1a507e5bda62ec6c22c",
+                "reference": "ee6cf5e169eceef045fcd1a507e5bda62ec6c22c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7.2.0",
+                "psr/log": "~1.0",
+                "reaway/think-container": "^1.0",
+                "reaway/think-facade": "^1.0",
+                "reaway/think-manager": "^1.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Think\\Component\\Log\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think log",
+            "homepage": "https://github.com/reaway/think-log",
+            "support": {
+                "issues": "https://github.com/reaway/think-log/issues",
+                "source": "https://github.com/reaway/think-log/tree/main"
+            },
+            "time": "2022-02-26T13:44:41+00:00"
+        },
+        {
+            "name": "reaway/think-manager",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-manager.git",
+                "reference": "3b59a2238a27eb30d66511001007e90cbde0fe07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-manager/zipball/3b59a2238a27eb30d66511001007e90cbde0fe07",
+                "reference": "3b59a2238a27eb30d66511001007e90cbde0fe07",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0",
+                "reaway/think-container": "^1.0",
+                "topthink/think-helper": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Think\\Component\\Manager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think manager",
+            "homepage": "https://github.com/reaway/think-manager",
+            "support": {
+                "issues": "https://github.com/reaway/think-manager/issues",
+                "source": "https://github.com/reaway/think-manager/tree/v1.0.2"
+            },
+            "time": "2022-02-26T13:32:58+00:00"
+        },
+        {
+            "name": "reaway/think-middleware",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-middleware.git",
+                "reference": "3ffc3c4652b62ff78012a22f43f11b9ebeae7efc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-middleware/zipball/3ffc3c4652b62ff78012a22f43f11b9ebeae7efc",
+                "reference": "3ffc3c4652b62ff78012a22f43f11b9ebeae7efc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0",
+                "reaway/think-config": "^1.0",
+                "reaway/think-container": "^1.0",
+                "reaway/think-facade": "^1.0",
+                "reaway/think-request": "^1.0",
+                "reaway/think-response": "^1.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Think\\Component\\Middleware\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think middleware",
+            "homepage": "https://github.com/reaway/think-middleware",
+            "support": {
+                "issues": "https://github.com/reaway/think-middleware/issues",
+                "source": "https://github.com/reaway/think-middleware/tree/main"
+            },
+            "time": "2022-02-25T03:10:52+00:00"
+        },
+        {
+            "name": "reaway/think-request",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-request.git",
+                "reference": "a98c0226c3ba92467e1aae0a982e4c27a4d0dfa6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-request/zipball/a98c0226c3ba92467e1aae0a982e4c27a4d0dfa6",
+                "reference": "a98c0226c3ba92467e1aae0a982e4c27a4d0dfa6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.2.0",
+                "reaway/think-env": "^1.0",
+                "reaway/think-facade": "^1.0",
+                "reaway/think-file": "^1.0",
+                "reaway/think-lang": "^1.0",
+                "reaway/think-session": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Think\\Component\\Request\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think request",
+            "homepage": "https://github.com/reaway/think-request",
+            "support": {
+                "issues": "https://github.com/reaway/think-request/issues",
+                "source": "https://github.com/reaway/think-request/tree/v1.0.2"
+            },
+            "time": "2022-02-20T06:46:27+00:00"
+        },
+        {
+            "name": "reaway/think-response",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-response.git",
+                "reference": "257db825587b3e320906a85f4c65a64754146532"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-response/zipball/257db825587b3e320906a85f4c65a64754146532",
+                "reference": "257db825587b3e320906a85f4c65a64754146532",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "ext-json": "*",
+                "php": ">=7.2.0",
+                "reaway/think-container": "^1.0",
+                "reaway/think-cookie": "^1.0",
+                "reaway/think-session": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Think\\Component\\Response\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think response",
+            "homepage": "https://github.com/reaway/think-response",
+            "support": {
+                "issues": "https://github.com/reaway/think-response/issues",
+                "source": "https://github.com/reaway/think-response/tree/v1.0.1"
+            },
+            "time": "2022-02-12T07:59:48+00:00"
+        },
+        {
+            "name": "reaway/think-route",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-route.git",
+                "reference": "5eeddddeff22fd6fe409796922c53c712dc096ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-route/zipball/5eeddddeff22fd6fe409796922c53c712dc096ca",
+                "reference": "5eeddddeff22fd6fe409796922c53c712dc096ca",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0",
+                "psr/http-message": "^1.0",
+                "reaway/think-config": "^1.0",
+                "reaway/think-facade": "^1.0",
+                "reaway/think-middleware": "dev-main",
+                "reaway/think-request": "^1.0",
+                "reaway/think-response": "^1.0",
+                "reaway/think-validate": "^1.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Think\\Component\\Route\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think route",
+            "homepage": "https://github.com/reaway/think-route",
+            "support": {
+                "issues": "https://github.com/reaway/think-route/issues",
+                "source": "https://github.com/reaway/think-route/tree/main"
+            },
+            "time": "2022-02-26T12:42:49+00:00"
+        },
+        {
+            "name": "reaway/think-session",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-session.git",
+                "reference": "747b9fbe0e5b0ab303c217c7084ffe0a8e80ccd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-session/zipball/747b9fbe0e5b0ab303c217c7084ffe0a8e80ccd5",
+                "reference": "747b9fbe0e5b0ab303c217c7084ffe0a8e80ccd5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-zlib": "*",
+                "php": ">=7.2.0",
+                "psr/simple-cache": "^1.0",
+                "reaway/think-facade": "^1.0",
+                "reaway/think-manager": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Think\\Component\\Session\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think session",
+            "homepage": "https://github.com/reaway/think-session",
+            "support": {
+                "issues": "https://github.com/reaway/think-session/issues",
+                "source": "https://github.com/reaway/think-session/tree/v1.0.2"
+            },
+            "time": "2022-02-21T02:07:18+00:00"
+        },
+        {
+            "name": "reaway/think-validate",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reaway/think-validate.git",
+                "reference": "51a98b12aaa367aba03b7102c3af998f0585e37a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reaway/think-validate/zipball/51a98b12aaa367aba03b7102c3af998f0585e37a",
+                "reference": "51a98b12aaa367aba03b7102c3af998f0585e37a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-mbstring": "*",
+                "php": ">=7.2.0",
+                "reaway/think-facade": "^1.0",
+                "topthink/think-helper": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Think\\Component\\Validate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "reaway",
+                    "email": "reaway@foxmail.com"
+                }
+            ],
+            "description": "think validate",
+            "homepage": "https://github.com/reaway/think-validate",
+            "support": {
+                "issues": "https://github.com/reaway/think-validate/issues",
+                "source": "https://github.com/reaway/think-validate/tree/v1.0.3"
+            },
+            "time": "2022-02-20T06:46:07+00:00"
         },
         {
             "name": "topthink/think-helper",
@@ -174,13 +967,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/top-think/think-helper/zipball/769acbe50a4274327162f9c68ec2e89a38eb2aff",
                 "reference": "769acbe50a4274327162f9c68ec2e89a38eb2aff",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0"
@@ -190,12 +977,12 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "think\\": "src"
-                },
                 "files": [
                     "src/helper.php"
-                ]
+                ],
+                "psr-4": {
+                    "think\\": "src"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -228,13 +1015,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/0abb51d2f102e00a4eefcf46ba7fec406d245825",
                 "reference": "0abb51d2f102e00a4eefcf46ba7fec406d245825",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
@@ -256,12 +1037,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -307,23 +1088,17 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v6.0.3",
+            "version": "v6.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "7b701676fc64f9ef11f9b4870f16b48f66be4834"
+                "reference": "60d6a756d5f485df5e6e40b337334848f79f61ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/7b701676fc64f9ef11f9b4870f16b48f66be4834",
-                "reference": "7b701676fc64f9ef11f9b4870f16b48f66be4834",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/60d6a756d5f485df5e6e40b337334848f79f61ce",
+                "reference": "60d6a756d5f485df5e6e40b337334848f79f61ce",
+                "shasum": ""
             },
             "require": {
                 "php": ">=8.0.2",
@@ -381,7 +1156,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v6.0.3"
+                "source": "https://github.com/symfony/var-dumper/tree/v6.0.5"
             },
             "funding": [
                 {
@@ -397,13 +1172,15 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-17T16:30:44+00:00"
+            "time": "2022-02-21T17:15:17+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "reaway/think-http": 20
+        "reaway/think-log": 20,
+        "reaway/think-middleware": 20,
+        "reaway/think-route": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

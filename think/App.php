@@ -18,25 +18,18 @@ use think\initializer\BootService;
 use think\initializer\Error;
 use think\initializer\RegisterService;
 use Think\Component\Container\Container;
+use Think\Component\Env\Env;
+use Think\Component\Config\Config;
+use Think\Component\Event\Event;
+use Think\Component\Lang\Lang;
 
 /**
  * App 基础类
- * @property Route      $route
- * @property Config     $config
- * @property Cache      $cache
- * @property Request    $request
- * @property Http       $http
- * @property Console    $console
+ * @property Container  $container
  * @property Env        $env
+ * @property Config     $config
  * @property Event      $event
- * @property Middleware $middleware
- * @property Log        $log
  * @property Lang       $lang
- * @property Db         $db
- * @property Cookie     $cookie
- * @property Session    $session
- * @property Validate   $validate
- * @property Filesystem $filesystem
  */
 class App
 {
@@ -136,22 +129,31 @@ class App
     private $container;
 
     /**
+     * @var Env
+     */
+    private $env;
+
+    /**
      * 架构方法
      * @access public
      * @param string $rootPath 应用根目录
      */
-    public function __construct(Container $container, string $rootPath = '')
+    public function __construct(string $rootPath = '')
     {
-        $this->thinkPath   = realpath(dirname(__DIR__)) . DIRECTORY_SEPARATOR;
+        $this->thinkPath   = __DIR__ . DIRECTORY_SEPARATOR;
         $this->rootPath    = $rootPath ? rtrim($rootPath, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR : $this->getDefaultRootPath();
         $this->appPath     = $this->rootPath . 'app' . DIRECTORY_SEPARATOR;
         $this->runtimePath = $this->rootPath . 'runtime' . DIRECTORY_SEPARATOR;
 
-        $this->container = $container;
+        $this->container = Container::getInstance();
 
         if (is_file($this->appPath . 'provider.php')) {
             $this->container->bind(include $this->appPath . 'provider.php');
         }
+        $this->env = $this->container->make('env');
+        $this->config = $this->container->make('config');
+        $this->event = $this->container->make('event');
+        $this->lang = $this->container->make('lang');
 
         $this->container->instance('app', $this);
         $this->container->instance('think\App', $this);
@@ -434,7 +436,7 @@ class App
 
         // 初始化
         foreach ($this->initializers as $initializer) {
-            $this->make($initializer)->init($this);
+            //$this->container->make($initializer)->init($this);
         }
 
         return $this;
@@ -457,7 +459,35 @@ class App
     {
         // 加载默认语言包
         $langSet = $this->lang->defaultLangSet();
-        $this->lang->switchLangSet($langSet);
+        $this->switchLangSet($langSet);
+    }
+
+    /**
+     * 切换语言
+     * @access public
+     * @param string $langset 语言
+     * @return void
+     */
+    public function switchLangSet(string $langset)
+    {
+        if (empty($langset)) {
+            return;
+        }
+
+        // 加载系统语言包
+        $this->lang->load([
+            $this->getThinkPath() . 'lang' . DIRECTORY_SEPARATOR . $langset . '.php',
+        ]);
+
+        // 加载系统语言包
+        $files = glob($this->getAppPath() . 'lang' . DIRECTORY_SEPARATOR . $langset . '.*');
+        $this->lang->load($files);
+
+        // 加载扩展（自定义）语言包
+        $list = $this->config->get('lang.extend_list', []);
+        if (isset($list[$langset])) {
+            $this->lang->load($list[$langset]);
+        }
     }
 
     /**
@@ -488,13 +518,10 @@ class App
         include_once $this->thinkPath . 'helper.php';
 
         $configPath = $this->getConfigPath();
-
         $files = [];
-
         if (is_dir($configPath)) {
             $files = glob($configPath . '*' . $this->configExt);
         }
-
         foreach ($files as $file) {
             $this->config->load($file, pathinfo($file, PATHINFO_FILENAME));
         }
